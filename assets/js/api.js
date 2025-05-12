@@ -1,5 +1,25 @@
 // assets/js/api.js
 document.addEventListener("DOMContentLoaded", () => {
+  const lang = localStorage.getItem("lang") || "az";
+  const page = window.location.pathname.split("/").pop().replace(".html", "") || "index";
+
+  console.log("📌 Detected language:", lang);
+  console.log("📄 Page:", page);
+
+
+
+  const langSelect = document.getElementById("lang-select");
+  if (langSelect) {
+    langSelect.value = lang;
+
+    langSelect.addEventListener("change", (e) => {
+      localStorage.setItem("lang", e.target.value);
+      // Gecikdirilmiş reload – localStorage tam yazılsın deyə
+      setTimeout(() => location.reload(), 100);
+    });
+  }
+
+
   // 🧩 Müştəri Loqoları
   fetch("/api/clients")
     .then((res) => res.json())
@@ -56,35 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
       new WOW().init();
     });
 
-    // fetch('/api/projects')
-    // .then(res => res.json())
-    // .then(data => {
-    //   const container = document.getElementById('project-list');
-    //   if (!container) return;
+  // 📂 Proyektlər (Blog səhifəsi üçün)
+  fetch("/api/projects")
+    .then((res) => res.json())
+    .then((data) => {
+      const container = document.getElementById("project-list");
+      if (!container || !data.length) return;
 
-    //   container.innerHTML = data.map(p => `
-    //     <div class="col-md-6 col-lg-4 py-3">
-    //       <div class="card-blog">
-    //         <div class="header">
-    //           <img src="${p.imageUrl}" alt="">
-    //         </div>
-    //         <div class="body">
-    //           <h5 class="post-title">${p.title}</h5>
-    //           <p>${p.description}</p>
-    //           ${p.link ? `<a href="${p.link}" class="btn btn-primary btn-sm">Daha ətraflı</a>` : ""}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   `).join('');
-    // });
-
-    fetch('/api/projects')
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById('project-list');
-      if (!container) return;
-
-      container.innerHTML = data.map(p => `
+      container.innerHTML = data
+        .map(
+          (p) => `
         <div class="col-md-6 col-lg-4 py-3">
           <div class="card-blog">
             <div class="header">
@@ -93,18 +94,62 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div class="entry-footer">
                 <div class="post-author">${p.title}</div>
-                <a href="${p.link}" target="_blank" class="post-date">Sayta keçid</a>
+                <a href="${p.link}" class="post-date" target="_blank">${p.link}</a>
               </div>
             </div>
             <div class="body">
-              <div class="post-title"><a href="${p.link}" target="_blank">${p.title}</a></div>
-              <div class="post-excerpt">${p.description}</div>
+              <div class="post-title"><a href="#">${p.description}</a></div>
+              <div class="post-excerpt">Proyekt haqqında qısa məlumat</div>
             </div>
             <div class="footer">
-              <a href="${p.link}" target="_blank">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              <a href="${p.link}" target="_blank">Sayta keç <span class="mai-chevron-forward text-sm"></span></a>
             </div>
           </div>
         </div>
-      `).join('');
+      `
+        )
+        .join("");
     });
+
+  // 🌐 Tərcümə API-dən gələn mətni uyğun id-lərə yaz
+  // fetch(`/api/lang/${lang}/${page}`)
+  //   .then(res => {
+  //     if (!res.ok) throw new Error(`Status ${res.status}`);
+  //     return res.json();
+  //   })
+  //   .then(data => {
+  //     Object.entries(data).forEach(([id, value]) => {
+  //       const el = document.getElementById(id);
+  //       if (el) el.innerHTML = value;
+  //     });
+  //   })
+  //   .catch(err => console.error("🛑 Translation API Error:", err));
+
+  //   console.log("FETCH:", `/api/lang/${lang}/${page}`);
+  //   console.log("TRANSLATION DATA:", data);
+  
+      // 🌐 Tərcümə API-dən gələn mətni uyğun id-lərə yaz
+  fetch(`/api/lang/${lang}/${page}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`Status ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      console.log("FETCH:", `/api/lang/${lang}/${page}`);
+      console.log("TRANSLATION DATA:", data);
+
+      Object.entries(data).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = value;
+          } else {
+            el.innerHTML = value;
+          }
+        }
+      });
+    })
+    .catch(err => console.error("🛑 Translation API Error:", err));
+
+
 });

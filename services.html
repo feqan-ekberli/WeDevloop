@@ -26,18 +26,61 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-  <div id="header"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-float">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">We<span class="text-primary">Devloop.</span></a>
+  
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">Əsas Səhifə</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">Haqqımızda</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">Xidmətlər</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link">İşlərimiz</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Əlaqə</a>
+            </li>
+          </ul>
+  
+          <div class="ml-auto">
+            <div class="ms-lg-auto mt-3 mt-lg-0 ">
+              <select class="form-select form-select-sm w-auto rounded-pill p-2" id="lang-select">
+                <option value="az">🇦🇿 AZ</option>
+                <option value="en">🇬🇧 EN</option>
+              </select>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <div class="page-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 py-3 wow fadeInLeft">
-            <h2 class="title-section">Sizin <span class="marked">Uğurunuz</span> Üçün Buradayıq</h2>
+            <h2 id="why-title" class="title-section">Sizin <span class="marked">Uğurunuz</span> Üçün Buradayıq</h2>
             <div class="divider"></div>
-            <p class="mb-5">Biz WeDevloop komandası olaraq biznesinizi böyütmək üçün veb inkişaf, proqram təminatı və kibertəhlükəsizlik sahələrində peşəkar xidmətlər təqdim edirik.</p>
-            <a href="#" class="btn btn-primary">Ətraflı Məlumat</a>
-            <a href="#pricing" class="btn btn-outline ml-2">Qiymətlərə Bax</a>
+            <p id="why-text" class="mb-5">Biz WeDevloop komandası olaraq biznesinizi böyütmək üçün veb inkişaf, proqram
+              təminatı və
+              kibertəhlükəsizlik sahələrində peşəkar xidmətlər təqdim edirik.</p>
+            <a id="btn-read-more" href="#" class="btn btn-primary">Ətraflı Məlumat</a>
+            <a id="btn-pricing" href="#pricing" class="btn btn-outline ml-2">Qiymətlərə Bax</a>
+
           </div>
           <div class="col-lg-6 py-3 wow zoomIn">
             <div class="img-place text-center">
@@ -47,34 +90,35 @@
         </div>
       </div> <!-- .container -->
     </div> <!-- .page-section -->
-  
+
     <div class="page-section">
       <div class="container">
         <div class="text-center wow fadeInUp">
-          <div class="subhead">Niyə WeDevloop-u Seçməlisiniz?</div>
-          <h2 class="title-section">Sizin Uğurunuz  <span class="marked">Bizim</span> Prioritetimizdir</h2>
+          <div id="why-subhead" class="subhead">Niyə WeDevloop-u Seçməlisiniz?</div>
+          <h2 id="why-priority" class="title-section">Sizin Uğurunuz <span class="marked">Bizim</span> Prioritetimizdir
+          </h2>
           <div class="divider mx-auto"></div>
         </div>
-  
+
         <div class="row mt-5 text-center">
           <div class="col-lg-4 py-3 wow fadeInUp">
             <div class="display-3"><span class="mai-shapes"></span></div>
-            <h5>Yüksək Keyfiyyətli Layihələr</h5>
-            <p>Layihələrinizi peşəkar komanda ilə yüksək standartlarda həyata keçiririk.</p>
+            <h5 id="why-quality">Yüksək Keyfiyyətli Layihələr</h5>
+            <p id="why-quality-text">Layihələrinizi peşəkar komanda ilə həyata keçiririk.</p>
           </div>
           <div class="col-lg-4 py-3 wow fadeInUp">
             <div class="display-3"><span class="mai-shapes"></span></div>
-            <h5>Əlçatan və Şəffaf Qiymətlər</h5>
-            <p>Hər büdcəyə uyğun, gizli ödənişsiz xidmət paketləri təklif edirik.</p>
+            <h5 id="why-transparent">Əlçatan və Şəffaf Qiymətlər</h5>
+            <p id="why-transparent-text">Gizli ödənişsiz xidmət paketləri təklif edirik.</p>
           </div>
           <div class="col-lg-4 py-3 wow fadeInUp">
             <div class="display-3"><span class="mai-shapes"></span></div>
-            <h5>Sürətli və Effektiv İş Prosesi</h5>
-            <p>Vaxtınıza dəyər veririk – layihələrinizi ən qısa zamanda keyfiyyətlə təhvil veririk.</p>
+            <h5 id="why-speed">Sürətli və Effektiv İş Prosesi</h5>
+            <p id="why-speed-text">Layihələrinizi ən qısa zamanda keyfiyyətlə təhvil veririk.</p>
           </div>
         </div>
       </div> <!-- .container -->
-    </div> <!-- .page-section -->
+    </div> <!-- .page-section --><!-- .page-section -->
   </main>
 
   <div id="footer"></div>
@@ -97,6 +141,8 @@
   <script src="./assets/js/theme.js"></script>
 
   <script src="./assets/js/index.js"></script>
+
+  <script src="./assets/js/api.js"></script>
 
 
 </body>

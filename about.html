@@ -26,7 +26,47 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-  <div id="header"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-float">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">We<span class="text-primary">Devloop.</span></a>
+  
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link" id="nav-home">Əsas Səhifə</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" id="nav-about">Haqqımızda</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link" id="nav-services">Xidmətlər</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link" id="nav-blog">İşlərimiz</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link" id="nav-contact">Əlaqə</a>
+            </li>
+          </ul>
+  
+          <div class="ml-auto">
+            <div class="ms-lg-auto mt-3 mt-lg-0 ">
+              <select class="form-select form-select-sm w-auto rounded-pill p-2" id="lang-select">
+                <option value="az">🇦🇿 AZ</option>
+                <option value="en">🇬🇧 EN</option>
+              </select>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <div class="page-section">
@@ -38,15 +78,18 @@
             </div>
           </div>
           <div class="col-lg-6 py-3 wow fadeInRight">
-            <h2 class="title-section"> <span class="marked">WeDevloop</span> İdeyanıza Güc Veririk</h2>
-            
+            <h2 id="hero-title" class="title-section"> <span class="marked">WeDevloop</span> İdeyanıza Güc Veririk</h2>
+
             <div class="divider"></div>
-            <p>Biz innovativ veb sayt və proqram təminatı həlləri ilə biznesinizin inkişafını sürətləndiririk. Peşəkar komandamız satış, brendinq və texnologiya sahəsində modern və effektiv həllər təqdim edir.</p>
+            <p id="hero-text">Biz innovativ veb sayt və proqram təminatı həlləri ilə biznesinizin inkişafını
+              sürətləndiririk. Peşəkar
+              komandamız satış, brendinq və texnologiya sahəsində modern və effektiv həllər təqdim edir.</p>
             <div class="img-place mb-3">
               <img src="./assets/img/testi_image.png" alt="">
             </div>
-            <a href="#" class="btn btn-primary">More Details</a>
-            <a href="#" class="btn btn-outline border ml-2">Success Stories</a>
+            <a id="btn-more-details" href="#" class="btn btn-primary">More Details</a>
+            <a id="btn-success-stories" href="#" class="btn btn-outline border ml-2">Success Stories</a>
+
           </div>
         </div>
       </div> <!-- .container -->
@@ -71,76 +114,9 @@
       </div> <!-- .container -->
     </div>
   
-    <!-- Testimonials -->
-    <div class="page-section bg-light">
-      <div class="container">
-        
-        <div class="owl-carousel wow fadeInUp" id="testimonials">
-          <div class="item">
-            <div class="row align-items-center">
-              <div class="col-md-6 py-3">
-                <div class="testi-image">
-                  <img src="./assets/img/person/person_1.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-md-6 py-3">
-                <div class="testi-content">
-                  <p>WeDevloop ilə işləmək işimizi tamamilə dəyişdi. Saytımız həm sürətli, həm də müasir görünüşlü oldu. Komanda çox peşəkar yanaşdı və vaxtında bütün işləri təhvil verdi</p>
-                  <div class="entry-footer">
-                    <strong>Nihat Məmmədov</strong> &mdash; <span class="text-grey">CEO, SultanSklep</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="item">
-            <div class="row align-items-center">
-              <div class="col-md-6 py-3">
-                <div class="testi-image">
-                  <img src="./assets/img/person/person_2.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-md-6 py-3">
-                <div class="testi-content">
-                  <p>Bizim üçün hazırlanmış xüsusi proqram təminatı satışlarımızı 70% artırdı. WeDevloop komandasının dəstəyi və çevik yanaşması bizi çox razı saldı.</p>
-                  <div class="entry-footer">
-                    <strong>Aygün Əliyeva</strong> &mdash; <span class="text-grey">Marketing Direktoru, NextGen Solutions</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-      </div> <!-- .container -->
-    </div> <!-- .page-section -->
     
-    <div class="page-section client-section">
-      <div class="container-fluid">
-        <div class="text-center wow fadeInUp">
-          <h2 class="title-section"> Müştərilərimiz </h2>
-          <div class="divider mx-auto"></div>
-        </div>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center">
-          <div class="item wow zoomIn">
-            <img src="./assets/img/clients/airbnb.png" alt="">
-          </div>
-          <div class="item wow zoomIn">
-            <img src="./assets/img/clients/google.png" alt="">
-          </div>
-          <div class="item wow zoomIn">
-            <img src="./assets/img/clients/stripe.png" alt="">
-          </div>
-          <div class="item wow zoomIn">
-            <img src="./assets/img/clients/paypal.png" alt="">
-          </div>
-          <div class="item wow zoomIn">
-            <img src="./assets/img/clients/mailchimp.png" alt="">
-          </div>
-        </div>
-      </div> <!-- .container-fluid -->
-    </div> <!-- .page-section -->
+    
+    
   </main>
 
   <div id="footer"></div>

@@ -26,72 +26,52 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-  <div id="header"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-float">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">We<span class="text-primary">Devloop.</span></a>
+  
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link" id="nav-home">Əsas Səhifə</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" id="nav-about">Haqqımızda</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link" id="nav-services">Xidmətlər</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link" id="nav-blog">İşlərimiz</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link" id="nav-contact">Əlaqə</a>
+            </li>
+          </ul>
+  
+          <div class="ml-auto">
+            <div class="ms-lg-auto mt-3 mt-lg-0 ">
+              <select class="form-select form-select-sm w-auto rounded-pill p-2" id="lang-select">
+                <option value="az">🇦🇿 AZ</option>
+                <option value="en">🇬🇧 EN</option>
+              </select>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <div class="page-section">
       <div class="container">
         <div class="row" id="project-list">
-          <div class="col-md-6 col-lg-4 py-3">
-            <div class="card-blog">
-              <div class="header">
-                <div class="avatar">
-                  <img src="./assets/img/person/person_1.jpg" alt="">
-                </div>
-                <div class="entry-footer">
-                  <div class="post-author">Sam Newman</div>
-                  <a href="#" class="post-date">23 Apr 2020</a>
-                </div>
-              </div>
-              <div class="body">
-                <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-              </div>
-              <div class="footer">
-                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 py-3">
-            <div class="card-blog">
-              <div class="header">
-                <div class="avatar">
-                  <img src="./assets/img/person/person_2.jpg" alt="">
-                </div>
-                <div class="entry-footer">
-                  <div class="post-author">Sam Newman</div>
-                  <a href="#" class="post-date">23 Apr 2020</a>
-                </div>
-              </div>
-              <div class="body">
-                <div class="post-title"><a href="blog-single.html">What is Assets Management?</a></div>
-                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-              </div>
-              <div class="footer">
-                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 py-3">
-            <div class="card-blog">
-              <div class="header">
-                <div class="avatar">
-                  <img src="./assets/img/person/person_3.jpg" alt="">
-                </div>
-                <div class="entry-footer">
-                  <div class="post-author">Sam Newman</div>
-                  <a href="#" class="post-date">23 Apr 2020</a>
-                </div>
-              </div>
-              <div class="body">
-                <div class="post-title"><a href="blog-single.html">What is Code of Conduct Business?</a></div>
-                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-              </div>
-              <div class="footer">
-                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-              </div>
-            </div>
-          </div>
           <div class="col-12 mt-5">
             <nav aria-label="Page Navigation">
               <ul class="pagination justify-content-center">
@@ -109,7 +89,6 @@
               </ul>
             </nav>
           </div>
-
         </div>
   
       </div>
@@ -117,7 +96,6 @@
   </main>
 
   <div id="footer"></div>
-
 
   <script src="./assets/js/jquery-3.5.1.min.js"></script>
 
