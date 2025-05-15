@@ -83,6 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("project-list");
       if (!container || !data.length) return;
 
+      // <a href="${p.link}" class="post-date" target="_blank">${p.link}</a>
+      
       container.innerHTML = data
         .map(
           (p) => `
@@ -94,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div class="entry-footer">
                 <div class="post-author">${p.title}</div>
-                <a href="${p.link}" class="post-date" target="_blank">${p.link}</a>
+                
               </div>
             </div>
             <div class="body">
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="post-excerpt">Proyekt haqqında qısa məlumat</div>
             </div>
             <div class="footer">
-              <a href="${p.link}" target="_blank">Sayta keç <span class="mai-chevron-forward text-sm"></span></a>
+              <a href="${p.link}" target="_blank">Visit Site <span class="mai-chevron-forward text-sm"></span></a>
             </div>
           </div>
         </div>
@@ -112,23 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // 🌐 Tərcümə API-dən gələn mətni uyğun id-lərə yaz
-  // fetch(`/api/lang/${lang}/${page}`)
-  //   .then(res => {
-  //     if (!res.ok) throw new Error(`Status ${res.status}`);
-  //     return res.json();
-  //   })
-  //   .then(data => {
-  //     Object.entries(data).forEach(([id, value]) => {
-  //       const el = document.getElementById(id);
-  //       if (el) el.innerHTML = value;
-  //     });
-  //   })
-  //   .catch(err => console.error("🛑 Translation API Error:", err));
-
-  //   console.log("FETCH:", `/api/lang/${lang}/${page}`);
-  //   console.log("TRANSLATION DATA:", data);
-  
-      // 🌐 Tərcümə API-dən gələn mətni uyğun id-lərə yaz
   fetch(`/api/lang/${lang}/${page}`)
     .then(res => {
       if (!res.ok) throw new Error(`Status ${res.status}`);
@@ -150,6 +135,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(err => console.error("🛑 Translation API Error:", err));
+
+    // 🌍 Footer translation
+fetch(`/api/lang/${lang}/footer`)
+  .then(res => res.ok ? res.json() : null)
+  .then(data => {
+    if (!data) return;
+    Object.entries(data).forEach(([id, value]) => {
+      const el = document.getElementById(id);
+      if (el) {
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+          el.placeholder = value;
+        } else {
+          el.innerHTML = value;
+        }
+      }
+    });
+  });
+
 
 
 });
